@@ -1,4 +1,14 @@
+
+
+This program can detect left_turn rule offender and high speed car.
+If a car offends the rule then it creates new window surrounding the car.
+And the scene will be saved automatically on the root folder.
+(for speed checking, you should set two lines at a distance of 9 meters. And you should set original_video fps =10.)
+
+
+
 # YOLOv3 + Deep_SORT
+
 
 __traffic-violation-detector - [[YouTube]](https://www.youtube.com/watch?v=_exZVRC4eYc) __
 ## Requirement
@@ -44,6 +54,12 @@ $ python main.py -c [CLASS NAME] -i [INPUT VIDEO PATH]
 
 $ python main.py -c car -i ./test_video/testvideo.mp4
 ```
+For drawing a line, just click on the starting point and move a mouse with clicked until the line's end.
+
+First, you set violation_line that may be white_full_line on the road and type 'c'.
+Second, you draw a line perpendicular to the direction of the car and type 'a'.
+Third, you draw a line perpendicular and nine meters away then type 'b'.
+
 
 __5. Can change [deep_sort_yolov3/yolo.py] `__Line 100__` to your tracking object__
 
