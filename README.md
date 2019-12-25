@@ -1,10 +1,3 @@
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_exZVRC4eYc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-This program can detect left_turn rule offender and high speed car.
-If a car offends the rule then it creates new window surrounding the car.
-And the scene will be saved automatically on the root folder.
-(for speed checking, you should set two lines at a distance of 9 meters. And you should set original_video fps =10.)
-
 
 
 # YOLOv3 + Deep_SORT
