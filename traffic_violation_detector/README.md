@@ -113,6 +113,6 @@ __5. Can change [deep_sort_yolov3/yolo.py] `__Line 100__` to your tracking objec
 ## Reference
 #### Github:deep_sort@[Nicolai Wojke nwojke](https://github.com/nwojke/deep_sort)
 #### Github:deep_sort_yolov3@[Qidian213 ](https://github.com/Qidian213/deep_sort_yolov3)
-### Github:Object-Detection-and-Tracking@[yehengchen] (https://github.com/yehengchen/Object-Detection-and-Tracking)
+### Github:Object-Detection-and-Tracking@[yehengchen](https://github.com/yehengchen/Object-Detection-and-Tracking)
 
 
