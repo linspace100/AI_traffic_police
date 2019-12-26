@@ -1,6 +1,6 @@
 
 
-# YOLOv3 + Deep_SORT
+# Temporarily Disabled
 
 
 __traffic-violation-detector - [[YouTube]](https://www.youtube.com/watch?v=_exZVRC4eYc) __
