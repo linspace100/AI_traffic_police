@@ -265,67 +265,7 @@ def main(yolo):
 
 
             #intersect A line
-            for j in range(1, len(pts[track.track_id])):
-                    if pts[track.track_id][0] is None or pts[track.track_id][1] is None:
-                       continue
-                    thickness = int(np.sqrt(64 / float(j + 1)) * 2)
-                    cv2.line(frame,(pts[track.track_id][j-1]), (pts[track.track_id][j]),(color),thickness)
-                    if intersect(pts[track.track_id][j - 1], pts[track.track_id][j], line[0], line[1]):
-                        violation_id[track.track_id] = True
-                    #if intersect(bts[track.track_id][0], bts[track.track_id][1], A_line[0], A_line[1]):
-                        #frame_count[track.track_id] = frame_index
-
-                    #if intersect(bts[track.track_id][0], bts[track.track_id][1], B_line[0], B_line[1]):
-                        #if frame_index == frame_count[track.track_id]:
-                            #continue
-                        #speed[track.track_id]=324./(frame_index-frame_count[track.track_id])
-                        #print(str(speed[track.track_id])+"km/h id:"+str(track.track_id))
-                        #if speed[track.track_id] >20:
-                            #highspeed.append(speed[track.track_id])
-            #this is for speed meter
-            for j in range(1, len(bts[track.track_id])):
-                    if bts[track.track_id][0] is None or bts[track.track_id][1] is None:
-                       continue
-                    if intersect(bts[track.track_id][0], bts[track.track_id][1], A_line[0], A_line[1]):
-                        frame_count[track.track_id] = frame_index
-
-                    if intersect(bts[track.track_id][0], bts[track.track_id][1], B_line[0], B_line[1]):
-                        if frame_index == frame_count[track.track_id]:
-                            continue
-                        speed[track.track_id]=324./(frame_index-frame_count[track.track_id])
-                        print(str(speed[track.track_id])+"km/h id:"+str(track.track_id))
-                        if speed[track.track_id] >20:
-                            highspeed.append(speed[track.track_id])
-
-
-            if violation_id[track.track_id] == True:
-
-                indexIDs.append(int(track.track_id))
-                counter.append(int(track.track_id))
-                bbox = track.to_tlbr()
-
-                cv2.rectangle(frame, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), (0, 0, 255), 4)
-                cv2.line(frame, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), (0, 0, 255), 3)
-                cv2.line(frame, (int(bbox[0]), int(bbox[3])), (int(bbox[2]), int(bbox[1])), (0, 0, 255), 3)
-                cv2.putText(frame, str(track.track_id)+"offender", (int(bbox[0]), int(bbox[1] - 50)), 0, 5e-3 * 300, (0, 0, 255), 3)
-                if len(class_names) > 0:
-                    class_name = class_names[0]
-                    cv2.putText(frame, str(class_names[0]), (int(bbox[0]), int(bbox[1] - 20)), 0, 5e-3 * 150, (color), 2)
-
-                i += 1
-                # bbox_center_point(x,y)
-                center = (int(((bbox[0]) + (bbox[2])) / 2), int(((bbox[1]) + (bbox[3])) / 2))
-                # track_id[center]
-                pts[track.track_id].append(center)
-                thickness = 2
-                result_top = int(center[1]-output_size[1]/2)
-                result_bottom = int(center[1]+output_size[1]/2)
-                result_left = int(center[0]-output_size[0]/2)
-                result_right = int(center[0]+output_size[0]/2)
-                if result_top > 0 and result_bottom>0 and result_left>0 and result_right>0:
-                    result_img = frame[result_top:result_bottom, result_left:result_right].copy()
-                    out2.write(result_img)
-                    cv2.imshow('result_img', result_img)
+            
 
 
 
