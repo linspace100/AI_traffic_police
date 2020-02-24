@@ -3,72 +3,16 @@
 # Temporarily Disabled
 
 
+
+
+
+
+
+
+
+
+
 __traffic-violation-detector - [[YouTube]](https://www.youtube.com/watch?v=_exZVRC4eYc) __
-## Requirement
-__Development Environment: [Deep-Learning-Environment-Setup](https://github.com/yehengchen/Ubuntu-16.04-Deep-Learning-Environment-Setup)__ 
-
-* OpenCV 3.4
-* NumPy
-* sklean
-* Pillow
-* tensorflow-gpu 1.15.0 
-***
-
-It uses:
-
-* __Detection__: [YOLOv3](https://github.com/yehengchen/ObjectDetection/tree/master/OneStage/yolo/yolov3) to detect objects on each of the video frames. - 用自己的数据训练YOLOv3模型
-
-* __Tracking__: [Deep_SORT](https://github.com/nwojke/deep_sort) to track those objects over different frames.
-
-*This repository contains code for Simple Online and Realtime Tracking with a Deep Association Metric (Deep SORT). We extend the original SORT algorithm to integrate appearance information based on a deep appearance descriptor. See the [arXiv preprint](https://arxiv.org/abs/1703.07402) for more information.*
-
-## Quick Start
-
-__0.Requirements__
-
-    pip install -r requirements.txt
-    
-__1. Download the code to your computer.__
-    
-    git clone https://github.com/yehengchen/Object-Detection-and-Tracking.git
-    
-__2. Download [[yolov3.weights]](https://pjreddie.com/media/files/yolov3.weights)__ and place it in `deep_sort_yolov3/model_data/`
-
-*Here you can download my trained [[yolo-spp.h5]](https://pan.baidu.com/s/1DoiifwXrss1QgSQBp2vv8w&shfl=shareset) - [t13k] weights for detection small objects - person/car/bicycle,etc.*
-
-__3. Convert the Darknet YOLO model to a Keras model:__
-```
-$ python convert.py model_data/yolov3.cfg model_data/yolov3.weights model_data/yolo.h5
-``` 
-__4. Run the YOLO_DEEP_SORT:__
-
-```
-$ python main.py -c [CLASS NAME] -i [INPUT VIDEO PATH]
-
-$ python main.py -c car -i ./test_video/testvideo.mp4
-```
-For drawing a line, just click on the starting point and move a mouse with clicked until the line's end.
-
-First, you set violation_line that may be white_full_line on the road and type 'c'.
-Second, you draw a line perpendicular to the direction of the car and type 'a'.
-Third, you draw a line perpendicular and nine meters away then type 'b'.
-
-
-__5. Can change [deep_sort_yolov3/yolo.py] `__Line 100__` to your tracking object__
-
-*DeepSORT pre-trained weights using people-ReID datasets only for person*
-```
-    if predicted_class != args["class"]:
-               continue
-    
-    if predicted_class != 'person' and predicted_class != 'car':
-               continue
-```
-
-## Train on Market1501 & MARS
-*People Re-identification model*
-
-[cosine_metric_learning](https://github.com/nwojke/cosine_metric_learning) for training a metric feature representation to be used with the deep_sort tracker.
 
 ## Citation
 
